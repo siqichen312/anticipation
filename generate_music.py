@@ -44,7 +44,7 @@ def generate_span_infill(input_midi1, infill_start, infill_end, input_end, outpu
 
     history = ops.clip(segment, 0, infill_start, clip_duration=False)
     anticipated = [CONTROL_OFFSET + tok for tok in ops.clip(segment, infill_end, input_end, clip_duration=False)]
-    inpainted = generate(model, infill_start, infill_end, inputs=input, controls=anticipated, top_p=.95)
+    inpainted = generate(model, infill_start, infill_end, inputs=history, controls=anticipated, top_p=.95)
 
 
 

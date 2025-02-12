@@ -1,0 +1,4 @@
+#!/bin/bash -fx
+cat ./doit
+clear
+py generate_music.py
